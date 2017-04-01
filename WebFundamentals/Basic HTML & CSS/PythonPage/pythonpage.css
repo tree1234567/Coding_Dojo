@@ -1,0 +1,241 @@
+#wrapper{
+    height: 702px;
+    width: 700px;
+    background: #245176;
+    box-shadow: 5px 5px 5px grey;
+}
+#topHalfBlue{
+     height:385px;
+     width: 700px;
+
+}
+#GetStartedandApplication{
+        background: white;
+        height:252px;
+        width: 700px;
+
+}
+#footer{
+    background: #245176;
+        height:50px;
+        width: 700px;
+
+}
+#footer ul li:nth-child(1){
+    padding-left: 85px;
+}
+#footer ul li{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    padding-right: 15px;
+    color: 
+}
+
+#textsize{
+    float:right;
+    font-size: 10px;
+    padding: 0px 25px 0px 0px;
+    display: inline-block;
+    margin:0;
+    
+}
+
+#pythonlogo{
+    display: inline-block;
+     
+    
+}
+img.resize{
+   height:65px;
+   margin: 13px 0px 0px 20px;
+}
+
+.textWhite{
+    color: white;
+}
+.textGold{
+    color: #dec03b
+
+}
+#rightside{
+    display:inline-block;
+    height: 74px;
+    width: 445px;
+    vertical-align: top;
+    padding-top: 8px;
+}
+
+#searchBar{
+    height:37px;
+    width: 183px;
+    background-color: #444444;
+    display:inline-block;
+    margin: 0px 0px 0px 253px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+}
+#InputBox{
+    height: 15px;
+    width: 95px;
+    margin-top: 8px;
+    margin-left: 32px;
+    color: grey;
+    text-align: center;
+    font-size: 10px;
+
+}
+#GoButton{
+    height:20px;
+    width: 27px;
+    padding:2px 0px 4px 0px;
+    font-size: 8px;
+    background-color: #245176;
+    outline-color: grey;
+    color:white;
+    border-radius:5px;
+}
+
+#NavBar{
+    height:38px;
+    width: 577px;
+    background-color: #407aad;
+    margin-left: 58px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    box-shadow:1px 1px 1px black;
+    
+
+}
+#NavBar li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   display: inline-block;
+    margin: 10px 15px 10px 10px;
+    color: white;
+    font-size: 17px;
+    
+
+
+}
+
+#GettingStarted{
+    height:132px;
+    width: 183px;
+    display:inline-block;
+    vertical-align: top;
+
+
+}
+.bullet{
+    width:8px;
+}
+#GettingStarted li{
+    text-decoration: underline;
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+#Introduction{
+    width: 436px;
+    height:245px;
+    display:inline-block;
+    margin: 12px 0px 0px 0px;
+}
+
+#Introduction{
+    text-align: center;
+    
+}
+#Introduction p{
+    font-size: 13px;
+    color: white;
+
+}
+
+#Introduction ul li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #dec03b;
+    margin-bottom: 5px;
+    
+}
+#Introduction ul li:nth-child(6){
+    color: white;
+    font-size: 12px;
+
+}
+#GetStarted{
+    display: inline-block;
+    width: 216px;
+    height: 235px;
+    vertical-align: top;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    margin-left: 38px;
+}
+
+#GetStarted h6{
+    width: 276px;
+    height: 3px;
+    background-color: #9abfe0;
+    padding: 0px;
+    margin: 8px 0px 0px 0px;
+    float: left;
+
+}
+#GetStarted ul{
+    padding-left: 11px;
+}
+#GetStarted ul li{
+    list-style: square;
+    }
+
+
+#Applications{
+    display: inline-block;
+    width: 220px;
+    height: 235px;
+    vertical-align: top;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    margin-left:112px;
+}
+
+
+#Applications h6{
+    width: 279px;
+    height: 3px;
+    background-color: #9abfe0;
+    position: absolute;
+    margin: 8px 0px 0px 0px;
+    
+
+}
+#Applications ul li{
+    list-style: square;
+}
+.color{
+    color: #86b3db;
+}
+#CopyRight{
+    padding:0px;
+    margin:0px 0px 5px 0px;
+    font-size: 7px;
+    text-align: center;
+}
+/*
+#dec03b gold
+#dec03b bar in second section  BLUE
+#407aad navbar  BLUE
+#9abfe0 bottom list blue
+#444444 Search Bar
+#245176 Go in search bar
+*/

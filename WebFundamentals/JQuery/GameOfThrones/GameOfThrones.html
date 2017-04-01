@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="GameOfThrones.css">
+
+</head>
+<body>
+    <div id="Wrapper">
+        <div id="Houses">
+            <img class="House" id="17" src="Houses/baratheon.png" leader="http://x104fm.com/site/wp-content/uploads/2015/03/missing-newsfirst.jpg" alt="baratheon image">
+
+            <img class="House" id="229" src="Houses/lannister.jpg" leader="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Cersei_Lannister-Lena_Headey.jpg/220px-Cersei_Lannister-Lena_Headey.jpg"  alt="baratheon image">
+
+            <img class="House" id="362" src="Houses/stark.jpg"  leader="http://vignette3.wikia.nocookie.net/gameofthrones/images/4/49/Battle_of_the_Bastards_08.jpg/revision/latest/scale-to-width-down/333?cb=20160615184845"alt="baratheon image">
+
+            <img class="House" id="378" src="Houses/targaryen.jpg" leader="http://s2.quickmeme.com/img/d4/d4114877ab040cecee86cb07c9fa596175e7969c5d1c37eb85c7aec12e125a0b.jpg" alt="baratheon image">
+        </div>
+
+        <div id="Description">
+            <h2>House Details</h2>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function(){
+        console.log("loaded.")
+        $(document).on("click",".House",function(event){
+            $("h2").siblings().remove();
+            console.log($(this).attr("id"));
+            var UrlGrab = "http://anapioficeandfire.com/api/houses/" + $(this).attr("id"); 
+            $.get(UrlGrab,function(res){
+                for(key in res){
+                    if(key == "name" || key == "words"){
+                        $("#Description").append("<p>"+key+": "+ res[key]+"</p>")
+                    }
+                    var list = "<h4>Titles!</h4><ul>"
+                if(key=="titles"){
+                    for (var x=0; x< res[key].length; x++){
+                        var title="<li>" + (res[key][x]) + "</li>"
+                        list += title
+                    }
+                    list+= "</ul>"
+                    $("#Description").append(list);
+                }
+                }
+            },"json")
+        })
+
+
+
+
+
+
+    })
+
+
+</script>
+</html>

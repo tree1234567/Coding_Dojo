@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Users.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Contact#</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>something@something.com</td>
+            <td>312-555-6969</td>
+        </tr>
+    </table>
+    <h1>ADD USER</h1>
+        <form>
+            <input type="text" name="first_name" placeholder="First name">
+            <input type="text" name="last_name"placeholder="Last name">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="cell" placeholder="Phone Number">
+        </form>
+        <button>Click me</button>
+<script>
+    $(document).ready(function(){
+        console.log("Doc Loaded.")
+    
+        $("button").on("click",function(){
+            console.log("fdsa")
+            var Pushhtml = "<tr>"
+            $("input").each(function(){
+                Pushhtml += "<td>" + $(this).val()+"</td>"
+                console.log(Pushhtml)
+            })
+            Pushhtml += "</tr>"
+            console.log("New"+Pushhtml);
+            $("table").append(Pushhtml);
+            
+        })
+
+
+
+    })
+
+
+</script>
+
+
+    
+</body>
+</html>

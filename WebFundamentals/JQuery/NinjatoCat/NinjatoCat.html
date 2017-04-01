@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="NinjatoCat.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="img/cat0.png" alt="Cat/Ninja Img"data-alt-src="img/ninja0.png">
+    </div>
+    <div>
+        <img src="img/cat1.png" alt="Cat/Ninja Img" data-alt-src="img/ninja1.png">
+    </div>
+    <div>
+        <img src="img/cat2.png" alt="Cat/Ninja Img" data-alt-src="img/ninja2.png">
+    </div>
+    <div>
+        <img src="img/cat3.png" alt="Cat/Ninja Img" data-alt-src="img/ninja3.png">
+    </div>
+    <div>
+        <img src="img/cat4.png" alt="Cat/Ninja Img" data-alt-src="img/ninja4.png">
+    </div>
+
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('img').click(function() {
+        $(this).attr("src", $(this).attr("data-alt-src"))
+    })
+    });
+
+</script>
+</html>

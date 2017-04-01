@@ -1,0 +1,53 @@
+#Wrapper{
+    height: 600px;
+    width: 1000px;
+    background-color: black;
+    background-repeat: no-repeat;
+    /*margin-left: 300px;*/
+    background-size: 100% 100%;
+
+}
+#ArenaSelect{
+    height: auto;
+    width: 250px;
+    background-color: grey;
+    display: inline-block;
+}
+#ArenaSelect button{
+    font-size: 15px;
+    padding:5px 10px;
+    margin: 5px;
+}
+#ArenaSelect h2{
+    text-align: center;
+    color: orange;
+
+}
+.Hide{
+    color: red;
+    display: inline-block;
+    vertical-align: top;
+
+}
+#Positioning{
+    display: inline-block;
+    margin-top: 200px;
+    margin-left: 300px;
+
+
+}
+.Hide{
+    height: 148px;
+    width: 250px;
+    background-color: grey;
+    display: inline-block;
+    text-align: center;
+}
+#PlayerTwo{
+    margin-left: 101px;
+}
+#Character1{
+    height:300px;
+    width:200px;
+    background-color:red
+}

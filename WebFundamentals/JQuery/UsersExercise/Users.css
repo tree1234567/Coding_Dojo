@@ -1,0 +1,11 @@
+table{
+    outline: 5px solid black;
+}
+
+table th{
+    padding:40px;
+}
+input{
+    display: block;
+    margin:10px;
+}

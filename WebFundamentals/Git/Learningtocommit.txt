@@ -1,0 +1,16 @@
+$ cd Desktop/
+$ mkdir gittest
+$ cd gittest/
+$ git init
+$ touch index.html styles.css aboutMe.txt
+$ git add .
+$ git commit -m "Initial Commit"
+$ atom . (Opens text editor to make changes to aboutMe.txt)
+$ git add .
+$ git commit -m "upaded aboutMe.txt"
+$ git add .
+$ git commit -m "added favorite movie to aboutMe.txt"
+$ git log
+$ git revert --no-edit HEAD
+$ git add .
+$ git commit -m "updated aboutMe.txt to add favorite book"

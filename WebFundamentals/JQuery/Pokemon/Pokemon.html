@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="Pokemon.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Wrapper">
+        
+        
+    </div>
+    <div id="Pokedex">
+            <h2 class="Refresh" id="Title">Pokedex</h2>
+            <ul class="Refresh" id=PokeImage>
+            </ul>
+            <div class="Container">
+                <h3 class="Refresh">Name:</h3>
+                <ul class="Refresh" id="Name">
+                </ul>
+            </div>
+            <div class="Container">
+                <h3 class="Refresh">Types:</h3>
+                <ul class="Refresh" id="Types">
+                </ul>
+            </div>
+            <div class="Container">            
+                <h3 class="Refresh">Height:</h3>
+                <ul class="Refresh" id="Height">
+                </ul>
+            </div>
+            <div class="Container">
+                <h3 class="Refresh">Weight:</h3>
+                <ul class="Refresh" id="Weight">
+                </ul>
+            </div>
+
+
+        </div>
+
+</body>
+
+<script>
+    $(document).ready(function(){
+        console.log("working...")
+        for (var x=1; x<=718; x++){
+            var Pushhtml = "<img class ='Pokemon'id='"+x+ "' src='http://pokeapi.co/media/img/" + x + ".png'>";
+            $("#Wrapper").append(Pushhtml)
+            console.log(Pushhtml);
+        } 
+        console.log("Done!")
+        $(document).on("click",".Pokemon",function(){
+            $(".Refresh").children().remove();
+            var PokeImg = $(this).attr("src")
+
+            //Grabs image src and concats it.
+            var InsertImage = "<img src='" + PokeImg+ "' alt='Image did not render'>"
+            $("#PokeImage").append(InsertImage);
+
+            var ID = "http://pokeapi.co/api/v1/pokemon/"+$(this).attr("id")+"/"
+
+            $.get(ID, function(res){
+                console.log(res)
+                var Name = "<li>"+res.name+"</li>"
+                $("#Name").append(Name);
+
+                //loops through type array 
+                for(var x=0; x<=res.types.length-1;x++){
+                    var Type= "<li>"+res.types[x].name+"</li>"
+                    $("#Types").append(Type)
+                }
+                var Height = "<li>"+res.height/10+" meter(s)</li>";
+                $("#Height").append(Height)
+
+                var Weight= "<li>"+res.weight/10+" kg</li>";
+                $("#Weight").append(Weight);
+            },"json");
+            
+            
+        })
+
+
+
+    })
+        
+
+
+</script>
+</html>

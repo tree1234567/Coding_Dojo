@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="DisappearingNinja.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Disappearing Ninja</title>
+</head>
+<body>
+    <div id="Wrapper">
+        <div id="Top">
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+        </div>
+        <div id="bottom">
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+            <div class="boxHeight">
+                <img src="https://rlv.zcache.com/hello_this_is_doge_classic_round_sticker-r3ef9eb7bbc8545759ab1671f33f8574b_v9waf_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" alt="Doge Picture">
+            </div>
+        </div>
+        <input id="Button" type="button" name="" value="Reset">
+    </div>
+    
+    
+<script>
+    $(document).ready(function(){
+        $("img").click(function(){
+        $(this).hide();
+    })
+    $("#Button").click(function(){
+        $("#Wrapper img").show();
+    })
+    });
+</script>
+</html>

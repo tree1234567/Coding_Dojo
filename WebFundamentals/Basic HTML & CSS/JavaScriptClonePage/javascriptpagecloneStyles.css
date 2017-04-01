@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#nav, #body{
+    display: inline-block;
+}
+#header, #nav, #body, #footer{
+    border-radius: 9px;
+}
+#wrapper{
+        height: 438px;
+        width: 700px;
+        background-color: #1c345e;
+        padding: 10px;
+        
+}
+#header{ 
+        height: 25px;
+        width: 677px;
+        background-color: #ce3036;
+        color: #c2cee7;
+        padding: 10px;
+        border-radius: 9px;
+        margin-bottom: 10px;
+}
+#nav{ 
+    height: 144px;
+    width: 104px;
+    background-color: #2a7d8c;
+    vertical-align: top;
+    padding: 10px;
+    text-decoration: underline;
+    color: #51d4e6;
+
+        
+}
+.navlist{
+        padding-left: 10px;
+        font-size: 10px;
+}
+#SubNavList{
+            padding-left: 10px;
+            font-size: 10px;
+            padding-left: 10px;
+        }
+
+#body {
+        height:318px;
+        width: 543px;
+        background-color: #0e1822;
+        color: #c2cee7;
+        margin-left: 10px;
+        padding: 10px 5px 7px 12px;
+        
+        
+}
+#fitme{ 
+        font-size: 10px;
+        padding-left: 10px;
+
+}
+
+a:link{
+    color: #51d4e6;
+     
+}
+.keyword{
+        color: #6e78fd;
+
+}
+#footer{
+    height: 15px;
+    width: 678px;
+    background-color: #5e6673;
+    margin-top: 8px;
+    color: #c2cee7;
+    padding: 10px; 
+    
+}
+p{
+    font-size:10px;
+    margin-bottom: 5px;
+}
+.listmarg{
+    margin-bottom: 5px;
+}

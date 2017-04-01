@@ -1,0 +1,307 @@
+#Wrapper{
+    height:auto;
+    width: 800px;
+    background-color: white;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#NavBar{
+    height:45px;
+    width: 800;
+    background-color: #565656;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px grey;
+    background-image: linear-gradient(to top, #E0E0E1, #f6f6f6);
+    margin-bottom: 15px;
+    border: 1px solid #ebebeb;
+}
+#NavBarLeft{
+    display:inline-block;
+    width:auto;
+}
+#NavBar ul li{
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 15px 19px 15px;
+    
+    height: 14px;
+    margin: 0px;
+}
+#NavBar ul{
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+#NavBar input{
+    display: inline-block;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    
+
+}
+#ListImage{
+    padding:0px;
+    margin: 0px;
+}
+
+#NavBarRight {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 122px;
+    margin-top: 11px;
+}
+#NavBarRight input{
+    background-image: url("accordance/loupe.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    padding-left: 5px;
+    vertical-align: top;
+}
+#IconPosition{
+    padding:1px;
+    display: inline-block;
+}
+
+
+#NavBarRight button{
+    display: inline-block;
+    height: auto;
+}
+#HomePageIconButton{
+    height:45px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.GreySlashes{
+    color: grey;
+    font-size: 20px;
+}
+
+.ListPadding{
+    padding-top: 5px;
+}
+
+#MainDisplay{
+    width:800px;
+    height:auto;
+    background-color: #525150;
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #3e3e3e, #535250);
+    box-shadow: 1px 1px 1px grey;
+    margin-bottom: 15px; 
+}
+
+#MainDisplay img{
+    height: 339px;
+}
+#MainDisplay ul{
+    margin:0px 0px 0px 20px;
+    padding: 0px 0px 10px 0px;
+    display: inline-block;
+    height: 19x;
+}
+#MainDisplay ul li{
+    margin:0px;
+    padding-left: 10px;
+    vertical-align: top;
+    display: inline-block;
+    color: cornflowerblue;
+    font-size: 12px;
+}
+.ColorWhite{
+    color: white;
+} 
+
+
+
+
+
+#GradientStyle{
+    background-image: linear-gradient(to top, #f2f2f2, #fefefe);
+}
+#BrowseStore{
+    width:800px;
+    height:auto;
+    padding: 10px 0px;
+    border: 1px solid lightgray;
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+
+}
+
+#BrowseStore h2{
+    display: inline-block;
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
+    color: lightgray;
+    margin-right: 60px;
+}
+
+#BrowseStore h1{
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    color: lightgrey;
+}
+
+#BrowseStore button{
+    display: inline-block;
+    margin: 0px 0px 0px 73px;
+    padding: 0px;
+    height: 36px;
+    width: 216px;
+    background-color: #4e88ae;
+    border-radius: 5px;
+    border-width: 1px;
+    color: white;
+    border-color: transparent;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px grey;
+}
+#PaddingforArrows{
+    margin-left: 65px;
+}
+
+
+
+
+
+.KeyFeatures{
+    display: inline-block;
+    width:auto;
+    vertical-align: top;
+    width: 180px;
+    height: 309px;
+    content: center;
+
+}
+
+.KeyFeatures img{
+    margin:0px;
+    padding: 0px;
+}
+
+.KeyFeatures h6{
+    margin:0px;
+    padding: 0px;
+    display: inline-block;
+    font-size: 20px;
+}
+.KeyFeatures p{
+    margin:0px;
+    padding: 0px;
+    word-wrap: break-word;
+    width: 120px;
+    font-size: 10px;
+}
+.KeyFeatures button{
+    margin:0px;
+    padding: 0px;
+    display: block;
+    height: 25px;
+    width: 130px;
+    background-color: #5ba6dd;
+    border-radius: 1px;
+    border-width: 1px;
+    color: white;
+    border-color: transparent;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px grey;
+
+}
+#Tour{
+    margin-top:21px;
+    margin-bottom: 34px;
+
+}
+#Key{
+    margin-top:21px;
+    margin-bottom: 33px;
+}
+#Video{
+    margin-top:21px;
+    margin-bottom: 21px;
+}
+#Products{
+    margin-top:21px;
+    margin-bottom: 37px;
+
+}
+
+#Promotion{
+     width:758px;
+    height:310px;
+    padding-left: 44px;
+    outline: 1px solid lightgrey;
+
+}
+
+#EmptySpacingContainer{
+    width:802px;
+    height:50px;
+    outline: 1px solid lightgrey;
+    
+}
+
+
+
+
+#GeneralUserHelp{
+    width:773px;
+    height:auto;
+    padding: 15px 15px 15px 2px;
+
+}
+.EmptyLineContainer{
+    width:auto;
+    height: 1px;
+    background-color: lightgray;
+    margin: 5px 0px;
+}
+
+.UserHelpSubSections{
+    width:100px;
+    height:121px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 25px 5px 0px;
+}
+.UserHelpSubSections h6{
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+
+    }
+
+
+.UserHelpSubSections ul{
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+.UserHelpSubSections ul li{
+    
+    padding: 5px 0px;
+    list-style-type:none;
+    font-size: 11px;
+    width: 120px;
+}
+
+#ExtraGeneralInfo{
+    font-size: 10px;
+    color: grey;
+}
+#EmptyContainerBottom{
+    width:auto;
+    height: 1px;
+    background-color: lightgrey;
+    margin: 30px 0px;
+}
+.ExtraSpace{
+    margin: 0px 8px;
+
+}

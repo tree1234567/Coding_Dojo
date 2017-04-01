@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="WeatherApp.css">
+    <link rel="json" type="text/javascript" href="city.list.json.gz">
+</head>
+<body>
+    <form>
+        <input id="Input"type="text" placeholder="Search a city!">
+        <button type="submit">Search Weather</button>
+    </form>
+    <div id="Data">  
+    </div>
+    
+
+    
+</body>
+
+<script>
+    $(document).ready(function(){
+        console.log('loaded')
+        $('button').on("click",function(event){
+            $("#Data").children().remove()
+            event.preventDefault();
+
+            console.log($("#Input").val())
+            var UrlSlice = $("#Input").val()
+            var UrlPusher = "http://api.openweathermap.org/data/2.5/weather?q=" + UrlSlice + "&APPID=a932ba238df0a62c81c1b71893b5a5b8"
+            console.log(typeof UrlPusher);
+            $.get(UrlPusher,function(res){
+                //console.log(res);
+
+                var Name = "<h1>"+res.name +"</h1>"
+                $("#Data").append(Name);
+                for(key in res.main){
+                    // console.log(key)
+                    // console.log(res.main[key])
+                    if (key == "temp" || key == "temp_min" || key == "temp_max"){
+                        var Temp = Math.trunc((res.main[key] * (9/5)) -459.67)
+                        $("#Data").append( "<h3>"+key +": " + Temp + "</h3>")
+                    }
+                }
+                var Conditions = "<h3> Conditions Today: " + res.weather[0].description + "</h3>"
+                $("#Data").append(Conditions);
+                // var temp = 
+            }, "json")
+            return false
+    })
+})
+//http://api.openweathermap.org/data/2.5/weather?q=Los 20Angeles&APPID=a932ba238df0a62c81c1b71893b5a5b8
+
+
+</script>
+</html>

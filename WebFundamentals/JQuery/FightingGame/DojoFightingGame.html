@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="DojoFightingGame.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+</head>
+<body>
+    <div id="Wrapper">
+        <div id="Positioning">
+
+
+            <div id="ArenaSelect">
+                <h2>Select Arena</h2>
+                <button type="button" image="dojo_arena_photos-master/beach.jpg">beach</button>
+                <button type="button" image="dojo_arena_photos-master/earth.jpg">earth</button>
+                <button type="button" image="dojo_arena_photos-master/dojo.jpg">dojo</button>
+                <button type="button" image="dojo_arena_photos-master/forest.jpg">forest</button>
+                <button type="button" image="dojo_arena_photos-master/matrix.jpg">matrix</button>
+                <button type="button" image="dojo_arena_photos-master/snow.jpg">snow</button>
+            </div>
+
+            <div class="Hide">
+                <h3>Character Selection</h3>
+                <select>
+                    <option value="dojo_arena_photos-master/donny.png">Donny</option>
+                    <option value="dojo_arena_photos-master/leo.png">Leo</option>
+                    <option value="dojo_arena_photos-master/mikey.png">Mikey</option>
+                    <option value="dojo_arena_photos-master/raphael.png">Raphael</option>
+                </select>
+                <select id="Player2">
+                    <option value="dojo_arena_photos-master/donny.png">Donny</option>
+                    <option value="dojo_arena_photos-master/leo.png">Leo</option>
+                    <option value="dojo_arena_photos-master/mikey.png">Mikey</option>
+                    <option value="dojo_arena_photos-master/raphael.png">Raphael</option>
+                </select>
+            </div>
+            <div id="Character1">
+                
+
+            </div>
+            <div id="Character2">
+                
+
+            </div>
+
+        </div>
+    </div> <!--wrapper-->
+
+
+
+
+
+</body>
+
+<script>
+$(document).ready(function(){
+    $(".Hide").hide()
+    $("button").hover(function(){
+        var imgPath = $(this).attr("image")
+        $("#Wrapper").css("background-image", "url("+(imgPath)+")");
+    })
+    $("button").click(function(){
+        $("#ArenaSelect").hide();
+        $(".Hide").fadeIn();
+    });
+
+
+    $("#Player2").on("change",function(){
+        var CharImg = $("option:selected").attr("value")
+        $("#Character1").css("background-image", "url("+(CharImg)+")");
+    })    
+    
+});
+
+
+
+
+
+
+
+</script>
+
+
+
+</html>

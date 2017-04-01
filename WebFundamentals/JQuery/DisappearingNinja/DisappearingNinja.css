@@ -1,0 +1,10 @@
+img{
+    height: 75px;
+}
+.boxHeight{
+    width:200px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}

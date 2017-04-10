@@ -9,13 +9,17 @@
 </head>
 
 <body>
-  {{all_friends}} {%for friend in all_friends%}
+  {{all_friends}}
+  {%for friend in all_friends%}
   <p>ID: {{friend['id']}}</p>
   <p>First Name: {{friend['first_name']}}</p>
   <p>Last Name: {{friend['last_name']}}</p>
   <p>Occupation: {{friend['occupation']}}</p>
   <form action="/friends/{{friend['id']}}" method="POST">
     <input type="submit" value="edit">
+  </form>
+  <form action="/remove_friend/{{friend['id']}}" method="POST">
+    <input type="submit" value="Delete">
   </form>
   {%endfor%}
   <form action="/friends" method="POST">

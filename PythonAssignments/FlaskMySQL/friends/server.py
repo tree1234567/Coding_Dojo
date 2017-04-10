@@ -12,16 +12,39 @@ def index():
     return render_template("index.html", all_friends = friends)
 
 
+
+
+#Insert User Route
 @app.route('/friends', methods=["POST"])
 def create():
     print request.form['first_name']
     print request.form['last_name']
     print request.form['occupation']
+    query = "INSERT INTO friends (first_name, last_name, occupation, created_at, updated_at) VALUES (:first_name, :last_name, :occupation, NOW(), NOW())"
+
+    data =  {
+            'first_name': request.form['first_name'],
+            'last_name': request.form['last_name'],
+            'occupation': request.form['occupation']
+    }
+    mysql.query_db(query,data)
 
     return redirect('/')
 
 
 
+
+#Update form route
+@app.route('/update_friend/<friend_id>', methods=['POST'])
+def update(friend_id):
+    query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation WHERE id = :id"
+
+    data = {'first_name': request.form['first_name'], 'last_name': request.form['last_name'], 'occupation': request.form['occupation'], 'id': friend_id}
+
+    mysql.query_db(query,data)
+    return redirect('/')
+
+#Update database Route
 @app.route('/friends/<friend_id>',methods=['POST'])
 def show(friend_id):
     # Write query to select specific user by id. At every point where
@@ -41,6 +64,15 @@ def show(friend_id):
     # so we pass the value at [0] to our template under alias one_friend.
     print friends
     return render_template('user.html', one_friend=friends[0])
+
+@app.route('/remove_friend/<friend_id>', methods=['POST'])
+def delete(friend_id):
+    query = 'DELETE FROM friends WHERE id =:id'
+    data = {'id':friend_id}
+    mysql.query_db(query, data)
+
+    return redirect('/')
+
 
 
 

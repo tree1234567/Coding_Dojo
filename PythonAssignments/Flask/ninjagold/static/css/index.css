@@ -1,0 +1,38 @@
+#YourGold{
+    display: inline-block;
+    vertical-align: top;
+}
+#GoldContainer{
+    display: inline-block;
+}
+h6 {
+    display: inline-block;
+}
+#GoldContainer{
+    display:inline-block;
+    height: 15px;
+    width: 60px;
+    background-color: red;
+}
+
+#ActivitiesWrapper{
+    margin:0;
+    padding: 0;
+}
+
+.Activies{
+    
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    outline: 2px solid black;
+    margin: 10px;
+}
+
+#ActivitiesLog{
+    
+    width: 770px;
+    height: 300px;
+    outline: 2px solid black;
+}

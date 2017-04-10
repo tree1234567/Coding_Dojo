@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  {{all_friends}} {%for friend in all_friends%}
+  <p>ID: {{friend['id']}}</p>
+  <p>First Name: {{friend['first_name']}}</p>
+  <p>Last Name: {{friend['last_name']}}</p>
+  <p>Occupation: {{friend['occupation']}}</p>
+  <form action="/friends/{{friend['id']}}" method="POST">
+    <input type="submit" value="edit">
+  </form>
+  {%endfor%}
+  <form action="/friends" method="POST">
+  First Name<input type="text" name="first_name">
+  Last Name <input type="text" name="last_name">
+  Occupation <input type="text" name='occupation'>
+  <input type="submit" value='Submit'>
+  </form>
+</body>
+
+
+
+</html>

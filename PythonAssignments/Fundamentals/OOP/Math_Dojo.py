@@ -22,6 +22,12 @@ class MathDojo(object):
                 for item in arg:
                     item = int(item)
                     self.num += item
+            
+            elif isinstance(arg, tuple):
+                for item in arg:
+                    item = int(item)
+                    self.num += item
+
             else:
                 self.addition.append(arg)
                 for number in self.addition:
@@ -30,15 +36,23 @@ class MathDojo(object):
 
     def sub(self,*args):
         self.subtraction = []
-        if isinstance(args, list):
-            for item in args:
-                self.num -= int(item)
-        else:
-            for arg in args:
-                self.subtraction.append(arg)
-            for number in self.subtraction:
-                self.num -= number
-            return self
+        for arg in args:
+            if isinstance(arg, list): #unpacks a list.
+                for item in arg:
+                    item = int(item)
+                    self.num -= item
+            
+            elif isinstance(arg, tuple):
+                for item in arg:
+                    item = int(item)
+                    self.num -= item
+
+
+            else:
+                self.subtraction.append(arg) #unpacks args into list then subtracts from total.
+                for number in self.subtraction:
+                    self.num -= number
+        return self
 
 
     def result(self):
@@ -47,4 +61,4 @@ class MathDojo(object):
 
 
 
-working=MathDojo().add([3,4],5).result()
+working = MathDojo().add([3,4],(2,3,4),5).sub((1,2),3).result()

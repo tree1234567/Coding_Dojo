@@ -1,0 +1,23 @@
+#wrapper{
+    float: center;
+    outline: 2px solid black;
+    width: 40%;
+    margin-left: 20%;
+    height: 340px;
+}
+
+#message{
+    background-color: red;
+}
+
+#comments{
+    height:130px;
+    width:auto;
+    overflow:auto;
+    border:8px solid yellowgreen;
+    padding:2%"
+
+}
+#Comment_input{
+    width: 350px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="/add_course" method="POST">
+        {% csrf_token %} Class Title: <input type="text" name="course_name"><br> Description: <br> <textarea name="description"
+            cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Add Class">
+    </form>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for course in classes %}
+        <tr>
+            <td>{{course.course_name}}</td>
+            <td>{{course.course_description}}</td>
+            <td>{{course.created_at}}</td>
+            <td><a href="/course_remove/{{course.id}}">remove</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+
+</html>

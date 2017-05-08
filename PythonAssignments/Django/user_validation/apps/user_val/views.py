@@ -14,11 +14,9 @@ def username_valid(request):
             try:
                 User.objects.create(username=request.POST['user_name'])
                 messages.add_message(request, messages.ERROR,'Username created')
-                return redirect('/')
-
+            
             except:
-                messages.add_message(request, messages.ERROR,'Username is already in the database')
-                return redirect('/')
+                messages.add_message(request, messages.ERROR,'Username is already in the database'
         else:
             messages.add_message(request, messages.ERROR,'Please make your username between 8 and 16 characters')
 

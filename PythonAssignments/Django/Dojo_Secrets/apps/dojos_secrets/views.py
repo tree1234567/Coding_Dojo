@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render, redirect
-
-from .models import User
-
+from .models import User, Secret
 from django.contrib import messages
+
+# print User
 
 # Create your views here.
 def index(request):
+
     return render(request, 'dojos_secrets/index.html')
 
 def register(request):
@@ -62,6 +62,10 @@ def login(request):
 
 
 def main_page(request):
+    print User
+    context= {
+        'User' : User.userManager.all()
+    }
     
     
-    return render(request, 'dojos_secrets/secrets.html')
+    return render(request, 'dojos_secrets/secrets.html',context)

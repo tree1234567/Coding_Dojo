@@ -93,11 +93,20 @@ class User(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.CharField(unique=True, max_length=100)
     password = models.CharField(max_length=100)
-
+    
     userManager = UserManager()
+
+    def __str__(self):
+        return self.first_name + " "+self.last_name
 
 
 class Secret(models.Model):
-    content
+    content = models.CharField(max_length=100)
     author = models.ForeignKey(User, related_name="secrets")
     likes = models.ManyToManyField(User, related_name='likes')
+    # def __str__(self):
+    #     return self.content + " : "+self.author
+
+    # secret = Secret.objects.get(pk=secret_id)
+    # user = User.objects.get(pk=request.session['current_user'])
+    # secret.likes.add(user)

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{team.team_name}}</h1>
+
+    <h3>Roster:</h3>
+    {% for player in players%}
+        <p>{{player.player_name}}</p>
+    {% endfor %}
+    <h3>Lineups: </h3>
+    {% for name in lineup%}
+        <h4>{{name.lineup_name}}</h4>
+    {% endfor %}
+
+<form action="{% url 'basketball:make_lineup' id=team.id %}" method = "POST">
+    {% csrf_token %}
+    Lineup Name: <input type="text" name="new_line_up">
+    <input type="submit" value="Create New Lineup">
+</form>
+
+</body>
+</html>

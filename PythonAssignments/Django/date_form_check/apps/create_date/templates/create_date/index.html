@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action='{% url "create_date:date_check" %}' method="POST">
+        startime:<input type="date" name="start">
+        endtime: <input type="date" name="end">
+        {% csrf_token %}
+        <input type="submit" value='submit'>
+    </form>
+
+    {% for date in dates%}
+        <p>The trip begins:{{date.event_start}}</p>
+        <p>The trip ends: {{date.event_end}}</p>
+    {% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+
+
+<% if flash && flash.any? %>
+    <% flash[:errors].each do |error| %>
+    <ul>
+        <li><%= error %></li>    
+    </ul>
+    <% end %>
+<% end %>
+
+<h3>Login</h3>
+<form action="/login" method='POST'>
+    <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+    email: <input type="text" name='email'><br>
+    Password: <input type="password"  name='password'><br>
+    <input type="submit" value='Login'>
+</form>
+
+<h3>Register</h3>
+<form action="/register" method='POST'>
+    <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+    First Name: <input type="text" name='user[first_name]'> <br>
+    Last Name: <input type="text"  name='user[last_name]'><br>
+    Email: <input type="text"  name='user[email]'><br>
+    Password: <input type="text"  name='user[password]'><br>
+    <input type="submit" value='Register'>
+</form>

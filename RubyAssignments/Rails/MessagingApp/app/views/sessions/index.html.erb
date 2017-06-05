@@ -1,0 +1,48 @@
+<h1>Welcome, <%= current_user.name %></h1>
+
+
+<div>
+<h1>Inbox</h1>
+<% @user.recieved_messages.each do |message|%>
+    <div>
+        <p> Sent By: <%= message.sender.name %></p>
+        <h3><%= message.content %></h3>
+    </div>
+<% end %>
+
+</div>
+
+<div>
+<h1>Outbox</h1>
+    <% @user.sent_messages.each do |message|%>
+    <div>
+        <p> Sent to: <%= message.reciever.name %></p>
+        <h3><%= message.content %></h3>
+    </div>
+<% end %>
+</div>
+
+<div>
+<h1>Contacts</h1>
+<% @unique_contacts.each do |contact|%>
+    <li><%= contact %></li>
+<% end %>
+</div>
+<div>
+<h1>New message</h1>
+<form  action="/send_message" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Email:</label>
+  <select name="message[recieving_user]">
+    <option value=""></option>
+    <% @users.each do |user|%>
+        <% if user.id.to_i != session[:user_id].to_i %>
+            <option value="<%=user.id%>"><%=user.name%></option>
+        <% end %>
+    <% end %>
+  </select>
+  <label>Content:</label><br>
+  <textarea name="message[content]" cols="30" rows="10"></textarea><br>
+  <button type="Submit">Send</button>
+</form>
+</div>

@@ -1,0 +1,21 @@
+<h1>Hello <%= @user.username%></h1>
+
+<h5><a href="/logout">Logout</a></h5>
+<h5><a href="/tasks/add">Add Task</a></h5>
+<table>
+<tr>
+    <th>Task</th>
+    <th>Status</th>            
+</tr>
+    <% @tasks.each do |task| %>
+        <tr>
+            <td><%=task.name%></td>
+            <% if task.status == false %>
+                <td><a href="/tasks/<%=task.id%>/edit">Not done</a></td>
+            <% end %>
+            <% if task.status == true %>
+                <td><a href="/tasks/<%=task.id%>/edit">Done</a></td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>

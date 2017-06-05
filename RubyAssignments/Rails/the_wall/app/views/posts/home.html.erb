@@ -1,0 +1,30 @@
+Hello <%= session[:user_name]%>
+
+<h4><a href="/logout">Logout</a></h4>
+
+
+
+
+<form action="/posts/create" method='POST'>
+    <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+    <textarea rows="4" cols="50" placeholder="Your Post Here" name="post"></textarea> <br>  
+    <input type="submit" value='Create Post'>
+</form>
+
+<% @posts.each do |post|%>
+<div class="box">
+<h6> Message By: <%= post.user.first_name%></h6>
+<h3> <%= post.message %> </p>
+    <% @comments.each do |comment|%>
+        <% if comment.post_id == post.id %>
+        <h6>Comment By: <%= comment.user.first_name %></h6>
+            <p> <%= comment.message %></p>
+        <% end %>
+    <% end %>
+    <form action="/comments/<%= post.id %>" method='POST'>
+        <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+        <input type = "text " placeholder="Your Comment Here" name='comment'> <br>  
+        <input type="submit" value='Add comment'>
+    </form>
+</div>
+<% end %>

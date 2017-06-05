@@ -61,7 +61,7 @@
             $("#PokeImage").append(InsertImage);
 
             var ID = "http://pokeapi.co/api/v1/pokemon/"+$(this).attr("id")+"/"
-
+            console.log(ID)
             $.get(ID, function(res){
                 console.log(res)
                 var Name = "<li>"+res.name+"</li>"

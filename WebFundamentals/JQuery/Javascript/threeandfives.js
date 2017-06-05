@@ -1,0 +1,10 @@
+function threeFives(num, num2){
+    var sum = 0;
+    for (var i = num; i <= num2; i++) {
+        if ((i % 3 === 0 || i % 5 === 0) && (i % 15 !== 0)) {
+            sum += i;
+}
+}
+    console.log(sum);
+    return sum;
+}

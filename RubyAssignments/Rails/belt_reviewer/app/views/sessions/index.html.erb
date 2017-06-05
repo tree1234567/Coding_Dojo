@@ -1,0 +1,70 @@
+<h1>Welcome, <%= current_user.first_name %></h1>
+<h3><a href="sessions/edit/<%=current_user.id%>">Edit Profile</a></h3>
+
+
+<h2>Here are some of the events in your state:</h2>
+<%=@events%>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Host</th>
+    <th>Action/status</th>
+</tr>
+<% @events_local.each do |event|%>
+<tr>
+    <td><a href="/events/<%=event.id%>"><%=event.name%></a></td>
+    <td><%=event.event_date%></td>
+    <td><%=event.location%></td>
+    <td><%=event.host.first_name%></td>
+    <% if event.attendees.include?(@user) %>
+        <td>Joining  <form action="/events/<%= event.id%>/destroy" method ="POST"><button> cancel</button>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></form></td>
+    <% else %>
+        <td><form action="/events/<%= event.id%>/join" method ="POST"><button> Join</button>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></form></td>
+    <% end %>
+</tr>
+<% end %>
+</table>
+
+<h2>Here are some events in other states:</h2>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Host</th>
+    <th>Action</th>
+</tr>
+<% @events_abroad.each do |event|%>
+<tr>
+    <td><a href="/events/<%=event.id%>"><%=event.name%></a></td>
+    <td><%=event.event_date%></td>
+    <td><%=event.location%></td>
+    <td><%=event.host.first_name%></td>
+    <% if event.attendees.include?(@user) %>
+        <td>Joining  <form action="/events/<%= event.id%>/destroy" method ="POST"><button> cancel</button><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></form></td>
+    <% else %>
+        <td>
+            <form action="/events/<%= event.id%>/join" method ="POST">
+                <button> Join</button>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            </form>
+        </td>
+    <% end %>
+</tr>
+<% end %>
+</table>
+
+<form action="/events/create" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">  
+    <label>Name</label><br>
+    <input type="text" name="name"><br><br>
+    <label>Date</label><br>
+    <input type="date" name="date"><br><br>
+    <label>Location</label><br>
+    <input type="text" name="location"><br><br>
+    <button type="submit">Add event</button>
+</form>

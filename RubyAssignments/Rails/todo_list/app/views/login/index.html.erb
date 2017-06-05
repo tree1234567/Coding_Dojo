@@ -1,0 +1,27 @@
+<h1> Welcome to task manager!</h1>
+
+<h3>Login</h3>
+
+<% if flash && flash.any? %>
+    <% flash[:errors].each do |error| %>
+    <ul>
+        <li><%= error %></li>    
+    </ul>
+    <% end %>
+<% end %>
+
+<form action="/login" method='POST'>
+    <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+    Username: <input type="text" name='username'><br>
+    Password: <input type="password"  name='password'><br>
+    <input type="submit" value='Login'>
+</form>
+
+<h3>Register</h3>
+<form action="/register" method='POST'>
+    <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+    Username: <input type="text" name='username'> <br>
+    Password: <input type="password"  name='password'><br>
+    Confirm Password: <input type="password"  name='confirm_password'><br>
+    <input type="submit" value='Register'>
+</form>

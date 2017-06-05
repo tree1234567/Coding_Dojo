@@ -1,0 +1,7 @@
+<form action="/tasks/create" method = "POST">
+    <input type="hidden" name='authenticity_token' value="<%= form_authenticity_token %>">
+    Task Name: <input type="text" name='name'><br>
+    <input type="submit" value='Create'>
+</form>
+
+

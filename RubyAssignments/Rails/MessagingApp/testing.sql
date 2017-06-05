@@ -1,0 +1,1 @@
+SELECT 'users'.* from 'users' INNER JOIN 'messages' ON 'id' = "messages"."reciever_id" WHERE "messages".'sender_id'?

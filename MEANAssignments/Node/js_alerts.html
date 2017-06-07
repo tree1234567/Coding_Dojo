@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+    name: "Armando",
+    distance_traveled : 0,
+    say_mah_name: function(){
+        alert(person.name);
+    },
+    say_stuff : function(stuff_ta_say){
+        alert(person.name + ' says: ' + stuff_ta_say);
+        return person
+    },
+    walk : function(){
+        alert(person.name + " just walked!")
+        person.distance_traveled +=3;
+        return person;
+    },
+    run : function(){
+        alert( person.name + ' just ran!')
+        person.distance_traveled +=10;
+        return person;
+    },
+    chewgum : function(){
+        alert(person.name + " can walk and chew gum! Just not at the same time! ")
+        
+    }
+}
+    </script>
+
+
+
+</body>
+</html>

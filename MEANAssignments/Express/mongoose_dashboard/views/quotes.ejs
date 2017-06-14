@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/">
+        <button type="submit">Make a new Quote!</button>
+    </form>
+    <h1>Here are the awesome quotes!</h1>
+
+
+    <% for(var x in users){ %>
+        <p>"<%= users[x].quote %>"</p>
+        <p>-<%= users[x].name %> at: <%= users[x].createdAt %></p>
+        <form action="/<%=users[x]._id%>/delete" method="POST">
+            <button type="submit">Delete this Quote</button> 
+        </form>
+        <hr>
+    <% } %>
+
+
+</body>
+</html>

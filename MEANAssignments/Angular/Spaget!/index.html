@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./../bower_components/angular/angular.js" charset="utf-8"></script>
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+      <h2>
+            <u>Food Stuff</u>
+        </h2>
+    <div ng-controller="spagetController">
+        <input placeholder="filter..." type="text" ng-model="foodFilter">
+        <div ng-repeat="food in foods | filter:foodFilter">
+            <ul>
+                <li>{{food}} &ensp; <button ng-click="deleteFood($index)">delete</button></li>
+            </ul>
+        </div>
+
+        <form>
+            <label>New Food</label>
+            <input type="text" ng-model="newFood">
+            <button type="submit" ng-click="addFood()">Submit</button>
+        </form>
+        <p>What you are typing:</p>
+        <div ng-if="newFood">
+            <p>{{newFood}}</p>
+        </div>
+      
+
+
+    </div>
+
+
+</body>
+
+</html>

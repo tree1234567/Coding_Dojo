@@ -1,0 +1,32 @@
+<form action='/users' method="POST">
+    <label>Name</label>
+    <input type="text" name="name"><br>
+    <label>Age</label>
+    <input type="text" name="age"><br>
+    <button type="submit">Submit User</button>
+</form>
+
+<table>
+    <tr>
+        <th> Name</th>
+        <th>Age </th>
+
+    </tr>
+
+    
+<% for(var x=0; x < users.length; x+=1) { %>
+<tr>
+<td><%=users[x].name %></td> 
+<td><%=users[x].age %></td>
+</tr>
+<% } %>
+
+ <% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <h3><%= errors[x].message %></h3>
+     <% } %>
+ <% } %>
+
+
+
+</table>

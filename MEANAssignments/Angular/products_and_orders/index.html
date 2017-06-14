@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="productsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./../bower_components/angular/angular.js"></script>
+    <script src="./main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div ng-controller="productsController">
+        <form>
+            <label>Product Name: </label>
+            <input type="text" ng-model="productName"><br>
+            <label> Product Price: </label>
+            <input type="text" ng-model="productPrice"><br>
+            <button type="submit" ng-click="newProduct()">Create!</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+
+                <tr ng-repeat="product in products">
+                    <td>{{product.product}}</td>
+                    <td>{{product.price}}</td>
+                    <td><button ng-click="deleteProduct($index)">Delete Product</button></tr>
+                </tr>
+    
+        </table>
+
+        <div ng-controller="quantityController">
+             <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+
+                <tr ng-repeat="product in products">
+                    <td>{{product.product}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td><button ng-click="buyProduct($index)">Buy</button></tr>
+                </tr>
+    
+        </table>
+
+
+            
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

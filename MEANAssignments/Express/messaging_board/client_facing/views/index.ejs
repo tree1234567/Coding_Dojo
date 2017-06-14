@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Make a new message:</h3>
+    <form action="/messages/new" method="POST">
+        <label>Name</label>
+        <input type="text" name="name">
+        <lable>Message</lable>
+        <input type="text" name="message">
+        <button type="submit">New Message</button>
+    </form>
+
+    <% for(x in messages){ %>
+    <div style="outline:1px solid black">
+        <h5><%= messages[x].name %> says: </h5>
+        <h4><%= messages[x].message %></h4>
+        <h3>comments: </h3>
+        <% for (var y = 0; y < messages[x]._comments.length; y+=1){ %>
+            <h6> <%= messages[x]._comments[y].name %> says :</h6>
+            <h5> <%= messages[x]._comments[y].comment %> </h5>
+        <% } %>
+        <form action="/comments/<%= messages[x]._id %>/new" method='post'>
+            <label>Name: </label><br>
+            <input type="text" name="name"><br>
+            <label>Comment: </label><br>
+            <input type="text" name="comment"><br>
+            <button type="submit">add comment</button>
+        </form>
+    </div>
+        
+    <% } %>
+
+
+
+
+</body>
+</html>

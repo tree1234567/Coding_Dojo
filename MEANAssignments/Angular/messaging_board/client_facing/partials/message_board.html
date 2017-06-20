@@ -1,0 +1,37 @@
+ <h3>Make a new message:</h3>
+    <form ng-submit="createMessage(messageObj)" method="POST">
+        <label>Name</label>
+        <input type="text" ng-model="messageObj.name">
+        <lable>Message</lable>
+        <input type="text"  ng-model="messageObj.message">
+        <button type="submit">New Message</button>
+    </form>
+
+
+
+
+<div ng-repeat="user in users">
+    <h3>{{user.name}} says: </h3>
+    <h4>{{user.message}}</h4>
+    <h3>Comments: </h3>
+    <div ng-repeat="comment in user._comments">
+        <h4>{{comment.name}} says: </h4>
+        <p>{{comment.comment}}</p>
+    </div>
+    <h5>Add Comment: </h5>
+    <form ng-submit="createComment(commentObj, user._id)">
+        <label>Name:</label>
+        <input type="text" ng-model="commentObj.name">
+        <label>Comment: </label>
+        <input type="text" ng-model="commentObj.comment">
+        <button type="submit">New Comment</button>
+    </form>
+
+</div>
+
+
+
+
+
+
+

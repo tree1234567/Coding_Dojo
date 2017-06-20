@@ -1,0 +1,9 @@
+.form-styles{
+    display:inline-block; 
+    color:red
+}
+.form-blocking{
+    display:inline-block; 
+    vertical-align: top;
+    margin: 10%;
+}

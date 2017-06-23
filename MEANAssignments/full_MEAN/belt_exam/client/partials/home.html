@@ -1,0 +1,39 @@
+<div ng-controller="homePageController">
+    <button ng-click="logout()">Logout</button>
+    <label>Search:</label>
+    <input type="text" ng-model="appointmentFilter">
+
+    <table>
+        <thead>
+            <tr>
+                <td style="margin:5px;">Date Time </td>
+                <td style="margin:5px;">Patient Name</td>
+                <td style="margin:5px;">Complaint</td>
+            </tr>
+        </thead>
+        <tr ng-repeat="appointment in appointments | filter : appointmentFilter">
+            <td style="margin:5px;">{{appointment.date | date: "MMMM d hh:mm a"}}</td>
+            <td style="margin:5px;">{{appointment._user.firstName}} {{appointment._user.lastName}}</td>
+            <td style="margin:5px;">
+                {{appointment.complaint}}
+                <form  style="display:inline-block;"ng-if="appointment._user._id == user_id" ng-submit="deleteAppointment(appointment._id)">
+                    <button type="submut">cancel</button>
+                </form>
+            </td>
+
+
+        </tr>
+
+    </table>
+    <p style="color: red" ng-if="appointmentDeleteErr">{{appointmentDeleteErr}}</p>
+
+
+
+    <form ng-submit="makeAppointment()">
+        <button type="submit">Add New Appointment </button>
+    </form>
+
+
+
+
+</div>

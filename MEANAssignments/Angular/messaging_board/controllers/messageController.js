@@ -2,22 +2,18 @@ var mongoose = require("mongoose");
 
 var Messages = mongoose.model('Messages');
 var Comments = mongoose.model('Comments');
+var Replies = mongoose.model('Replies');
 
 
 module.exports = {
 
     index: function (req, res) {
-        Messages.find({}).populate("_comments").exec(function (message_errs, messages) {
-            if (message_errs) { 
-                console.log('messages could not render') 
-                res.json({messages : []})
-            }
-            else {
-                // console.log(messages[0]._comments.length)
-                // console.log('messages found!')
+        var promise = Messages.find({}).populate("_comments _replies")
+       promise.then(function (messages) {
+                console.log(messages)
                 res.json({ messages: messages });
 
-            }
+            
         })
     },
 
@@ -71,5 +67,30 @@ module.exports = {
             }
         })
 
+    },
+    newReply: function(req,res){
+        Comments.findOne({_id: req.params.comment_id}, function(findCommentErr, comment){
+            if (findCommentErr){
+                console.log('could not find comment with Id:' + req.params.comment_id)
+            }else{
+                console.log(comment._id)
+                var reply = new Replies({name: req.body.name, reply: req.body.reply})
+                reply._comment = comment._id
+                reply.save(function(replyCreateErr){
+                    if (replyCreateErr){
+                        console.log("it didnt work")
+                    }else{
+                        Comments.update({_id: req.params.comment_id}, {$push: {"_replies": reply}},function(commentKeyErr){
+                            if(commentKeyErr){
+                                console.log('comment reply failed')
+                            }else{
+                                console.log('reply was successfully attached to comment!')
+                                res.json({message: 'success'});
+                            }
+                        })
+                    }
+                })
+            }
+        })
     }
 }

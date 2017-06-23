@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/basic_mongoose');
+mongoose.connect('mongodb://localhost/discussion_board_light');
 mongoose.Promise = global.Promise;
 
 

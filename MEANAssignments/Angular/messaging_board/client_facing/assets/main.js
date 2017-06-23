@@ -44,7 +44,13 @@ app.factory('userMessagingFactory', function($http){
             factory.getUsers(returnUsers)
         })
     }
+    factory.createReply = function (replyObj, commentId, getUsersandMessages){
 
+        $http.post('/api/replies/' + commentId + '/new', replyObj).then(function(res){
+
+            factory.getUsers(getUsersandMessages)
+        })
+    }
         
     return factory
 })
@@ -71,7 +77,9 @@ app.controller('userMessagingController', ["$scope", "userMessagingFactory", fun
         // console.log(commentObj, messageIndex);
     }
 
-
+    $scope.createReply = function(replyObj, commentId){
+        userMessagingFactory.createReply(replyObj, commentId, getUsersandMessages);
+    }
 
 
 

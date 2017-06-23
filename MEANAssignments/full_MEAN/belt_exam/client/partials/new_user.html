@@ -1,0 +1,67 @@
+<div ng-controller="usersController">
+
+    <div class="form-blocking">
+        <h1>Login</h1>
+        <form ng-submit="login(userLoginObj)">
+            <label>Email: </label><br>
+            <input type="text" ng-model="userLoginObj.email"><br>
+            <label>Password: </label><br>
+            <input type="text" ng-model="userLoginObj.password"><br><br>
+            <button type="submit">Login</button>
+        </form><br>
+        <span ng-if="loginErrors"  style="color:red;" >**{{loginErrors}}</span>
+    </div>
+    <div class="form-blocking">
+        <!--<a href="#!/"></a>-->
+        <h1>Registration</h1>
+
+        <span class="form-styles" ng-if="emailExists" style="color:red;">Email Already Exists!</span>
+        <form name="registration" class="myForm" required ng-submit="makeUser(userObj,confirmPassword)">
+            <label>First Name: </label><br>
+            <input type="text" name="firstName" ng-model="userObj.firstName" minlength="4" required />
+
+            <div class="form-styles" ng-messages="registration.firstName.$error">
+                <div class="form-styles" ng-message="required">This field is required</div>
+                <div class="form-styles" ng-message="minlength">Minimum of 4 characters</div>
+            </div>
+
+            <br>
+            <label>Last Name: </label><br>
+            <input type="text" name="lastName" ng-model="userObj.lastName" required minlength="4">
+            <div class="form-styles" ng-messages="registration.lastName.$error">
+                <div class="form-styles" ng-message="required">This field is required</div>
+                <div class="form-styles" ng-message="minlength">Minimum of 4 characters</div>
+            </div>
+
+            <br><label>Email: </label><br>
+            <input type="text" name="email" ng-model="userObj.email" required ng-pattern="/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/">
+            <div class="form-styles" ng-messages="registration.email.$error">
+                <div class="form-styles" ng-message="required">This field is required</div>
+                <div class="form-styles" ng-message="pattern">Please put in a valid email Format!</div>
+            </div>
+
+            <br><label>Password: </label><br>
+            <input type="password" name="password" ng-model="userObj.password" required minlength="8" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,32}/">
+            <div class="form-styles" ng-messages="registration.password.$error">
+                <div class="form-styles" ng-message="required">This field is required</div>
+                <div class="form-styles" ng-message="pattern">Password failed validation, 1 special character, 1 uppercase letter and 1 number required</div>
+            </div>
+
+
+            <br><label>Confirm Password: </label><br>
+            <input type="password" name="confirmPassword" ng-model="confirmPassword" required minlength="8" compare-to="userObj.password">
+            <div class="form-styles" ng-messages="registration.confirmPassword.$error">
+                <div class="form-styles" ng-message="compareTo">Must match the previous entry</div>
+            </div>
+
+
+            <br><br><button type="submit" ng-disabled="registration.$pristine || registration.$invalid">
+                Register
+            </button>
+        </form>
+    </div>
+
+
+
+
+</div>

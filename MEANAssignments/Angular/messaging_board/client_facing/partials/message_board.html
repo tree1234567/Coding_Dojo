@@ -10,14 +10,9 @@
 
 
 
-<div ng-repeat="user in users">
+<div ng-repeat="user in users" style="border:2px solid black;">
     <h3>{{user.name}} says: </h3>
     <h4>{{user.message}}</h4>
-    <h3>Comments: </h3>
-    <div ng-repeat="comment in user._comments">
-        <h4>{{comment.name}} says: </h4>
-        <p>{{comment.comment}}</p>
-    </div>
     <h5>Add Comment: </h5>
     <form ng-submit="createComment(commentObj, user._id)">
         <label>Name:</label>
@@ -26,6 +21,26 @@
         <input type="text" ng-model="commentObj.comment">
         <button type="submit">New Comment</button>
     </form>
+    <h3>Comments: </h3>
+    <div ng-repeat="comment in user._comments">
+        <h4>{{comment.name}} says: </h4>
+        <p>{{comment.comment}}</p>
+        <!--<p>{{comment._id}}</p>-->
+        <form ng-submit="createReply(replyObj, comment._id)">
+            <label>Name:</label>
+            <input type="text" ng-model="replyObj.name">
+            <label>Reply</label>
+            <input type="text" ng-model="replyObj.reply">
+            <button type="submit">New Reply</button>
+        </form>
+        <div ng-repeat="reply in comment._replies">
+            <h4>{{reply.name}}</h4>
+            <p>{{reply.reply}}</p>
+        </div>
+
+    </div>
+
+    
 
 </div>
 

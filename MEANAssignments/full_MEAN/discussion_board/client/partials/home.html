@@ -1,0 +1,57 @@
+
+<div ng-controller="homePageController">
+    <button ng-click="logout()">Logout</button>    
+    <input type="text" ng-model="topicFilter">
+
+    <table>
+        <thead>
+            <tr>
+                <td>Category</td>
+                <td>Topic</td>
+                <td>User Name</td>
+                <td>Posts</td>
+            </tr>
+        </thead>
+        <tr ng-repeat="topic in topics">
+            <td></td>
+        </tr>
+
+    </table>
+
+   <h3>Add new Topic</h3>
+    <form ng-submit="newTopic(topicObj)">
+        <label>Topic: </label><br>
+        <input type="text" ng-model="topicObj.topic"><br>
+        <label>Description:</label><br>
+        <input type="text" ng-model="topdic.description"><br>
+        <label>Category</label><br>
+        <select ng-model="topic.category">
+            <option value='Ruby'>Ruby</option>
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+            <option value="C#">C#</option>
+        </select><br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

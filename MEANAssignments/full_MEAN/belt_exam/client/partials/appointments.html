@@ -1,0 +1,27 @@
+<div ng-controller="homePageController">
+
+    <h2>New Appointment</h2>
+    <p ng-if="appointmentCreateErr" style="color: red">{{appointmentCreateErr}}</p>
+    <form ng-submit="createAppointment(appointmentObj)">
+        <label>Date: </label>
+        <input type="datetime-local" ng-model="appointmentObj.date" required>
+        
+        <label>Complaint:</label><br>
+        <textarea ng-model="appointmentObj.complaint"rows="10" cols="30" placeholder="Tell us why you're sick"></textarea>
+        <br><button type="submit">Add Appointment</button>
+    </form>
+
+    <form ng-submit="dashboard()">
+        <button type="submit">Cancel</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+</div>

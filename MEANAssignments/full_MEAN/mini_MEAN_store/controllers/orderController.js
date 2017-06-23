@@ -18,7 +18,7 @@ module.exports = {
                 }
                 else {
                     var remainder = product.quantity - req.body.quantity
-                    Products.update({ _id: product._id }, { $set: { quantity: req.body.quantity } }, function (updateErr, productUpdated) {
+                    Products.update({ _id: product._id }, { $set: { quantity: remainder } }, function (updateErr, productUpdated) {
                         if (updateErr) {
                             console.log('Failed to make update record')
                             res.json({ message: "Order could not be placed! Try again", success: false })

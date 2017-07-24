@@ -1,0 +1,45 @@
+<div ng-controller="questionController">
+    <h3>Choose an answer of each of the question and submit the test once done. Good Luck!</h3>
+    <form ng-submit="submitQuiz(resultsObj)" name="quiz" required>
+        <div>
+            <p>{{questions[0].question}}</p>
+            <select required ng-model="resultsObj.questionOne" name="q1">
+                
+                <option value="{{questions[0].answer}}">{{questions[0].answer}}</option>
+                <option value="{{questions[0].fakeAnswerOne}}">{{questions[0].fakeAnswerOne}}</option>
+                <option value="{{questions[0].fakeAnswerTwo}}">{{questions[0].fakeAnswerTwo}}</option>
+            </select>
+            <div ng-messages="quiz.q1.$error" class="form-styles">
+                <div  class="form-styles" ng-message="required">required</div>
+            </div>
+        </div>
+        <div>
+            <p>{{questions[1].question}}</p>
+            <select ng-model="resultsObj.questionTwo"required name="q2">
+                <option value="{{questions[1].fakeAnswerTwo}}">{{questions[1].fakeAnswerTwo}}</option>
+                <option value="{{questions[1].answer}}">{{questions[1].answer}}</option>
+                <option value="{{questions[1].fakeAnswerOne}}">{{questions[1].fakeAnswerOne}}</option>
+            </select>
+            <div class="form-styles" ng-messages="quiz.q2.$error">
+                <div class="form-styles" ng-message="required">required</div>
+            </div>
+
+        </div>
+        <div>
+            <p>{{questions[2].question}}</p>
+            <select required ng-model="resultsObj.questionThree" ng-selected="$index[0]" name="q3">
+                <option value="{{questions[2].fakeAnswerOne}}">{{questions[2].fakeAnswerOne}}</option>
+                <option value="{{questions[2].fakeAnswerTwo}}">{{questions[2].fakeAnswerTwo}}</option>
+                <option value="{{questions[2].answer}}">{{questions[2].answer}}</option>
+            </select>
+            <div class="form-styles" ng-messages="quiz.q3.$error">
+                <div class="form-styles" ng-message="required">required</div>
+            </div>
+        </div>
+        <button type="submit" ng-disabled="quiz.$pristine || quiz.$invalid">Submit</button>
+    </form>
+    <form ng-submit="redirect()">
+        <button type="submit">Cancel</button>
+    </form>
+    
+</div>

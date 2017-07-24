@@ -1,0 +1,5 @@
+client_id= 'BCC9Nclgueha3A'
+client_secret='7JEuwA106gAuj0DM_atzWPW0Pw8'
+user_agent='tree1234567 test comment responder'
+username='tree1234567bot'
+password='cheeko4dioS'

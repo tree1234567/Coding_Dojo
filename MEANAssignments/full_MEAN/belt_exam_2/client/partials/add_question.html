@@ -1,0 +1,45 @@
+<div ng-controller="questionController">
+    <p><a href="#!/">Home</a> | <b>Add a Question</b></p>
+    <h2>New Question</h2>
+
+    <p style="color:red;" ng-if="questionErrors">{{questionErrors}}</p>
+    <form ng-submit="newQuestion(questionObj)" name="questionForm">
+        <label>Question</label>
+        <textarea name="question" ng-model="questionObj.question" rows="10" cols="30" required minlength="15"></textarea>
+        <div class="form-styles" ng-messages="questionForm.question.$error">
+            <div class="form-styles" ng-message="required">** This field is Required</div>
+            <div class="form-styles" ng-message="minlength">** Question Needs to be 15 characters long </div>
+        </div><br>
+
+
+        <label>Correct Answer</label>
+        <input type="text" name="correct" required minlength="5" ng-model="questionObj.correct">
+        <div class="form-styles" ng-messages="questionForm.correct.$error">
+            <div class="form-styles" ng-message="required">** This field is Required</div>
+            <div class="form-styles" ng-message="minlength">** Question Needs to be 5 characters long </div>
+        </div><br>
+
+        <label>Fake Answer 1:</label>
+        <input type="text" name="fakeOne" required minlength="5" ng-model="questionObj.fakeOne">
+        <div class="form-styles" ng-messages="questionForm.fakeOne.$error">
+            <div class="form-styles" ng-message="required"> ** This field is Required</div>
+             <div class="form-styles" ng-message="minlength">** Question Needs to be 5 characters long </div>
+        </div><br>
+
+
+        <label>Fake Answer 2: </label>
+        <input type="text" required minlength="5"  name="fakeTwo" ng-model="questionObj.fakeTwo">
+         <div class="form-styles" ng-messages="questionForm.fakeTwo.$error">
+            <div class="form-styles" ng-message="required">** This field is Required</div>
+             <div class="form-styles" ng-message="minlength">** Question Needs to be 5 characters long </div>
+        </div><br>
+        <button type="submit" ng-disabled="questionForm.$pristine || questionForm.$invalid">Add Question</button>
+    </form>
+    <form ng-submit="redirect()">
+        <button type="submit">Cancel</button>
+    </form>
+     
+
+
+
+</div>

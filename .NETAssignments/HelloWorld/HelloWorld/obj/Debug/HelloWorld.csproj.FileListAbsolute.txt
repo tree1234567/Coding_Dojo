@@ -1,0 +1,6 @@
+C:\Users\Armando\Desktop\CodingDojo\.NETAssignments\HelloWorld\HelloWorld\bin\Debug\HelloWorld.exe.config
+C:\Users\Armando\Desktop\CodingDojo\.NETAssignments\HelloWorld\HelloWorld\bin\Debug\HelloWorld.exe
+C:\Users\Armando\Desktop\CodingDojo\.NETAssignments\HelloWorld\HelloWorld\bin\Debug\HelloWorld.pdb
+C:\Users\Armando\Desktop\CodingDojo\.NETAssignments\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
+C:\Users\Armando\Desktop\CodingDojo\.NETAssignments\HelloWorld\HelloWorld\obj\Debug\HelloWorld.exe
+C:\Users\Armando\Desktop\CodingDojo\.NETAssignments\HelloWorld\HelloWorld\obj\Debug\HelloWorld.pdb

@@ -44,7 +44,7 @@ def gold(request):
 
         if request.session['place'] == "casino":
             gold_found = randint(-50,50)
-            request.session['amount'] += gold_found
+            request.session['amount'] += gold_foundc
             if gold_found > 0:
                 string = "you won "+ str(gold_found)+" gold coins at the casino.. time: " + str(date_time)
             if gold_found < 0:
